@@ -36,7 +36,7 @@ th {
    
    	    <?php
 	    $i=0;
-	    ?>	
+	    ?>	 
   <tr>
     <th style="width:50%">Department Name</th>
     <th style="width:50%">Total Seat</th>
@@ -46,10 +46,10 @@ th {
     <tr>
     <td style="font-size: 18px" >{{ link_to('entry/'.'req_check/'.$dept[$i]->unit_id.'/'.$group_id.'/'.$dept[$i]->dept_name,$dept[$i]->dept_name) }}
     </td>
-    <td style="font-size: 18px">{{$dept[$i]->seat}}</td>
+    <td style="font-size: 18px">{{$dept[$i]->seat}}</td> 
     </tr>
     @endforeach
-
+ 
 </table>
 
 <br/>

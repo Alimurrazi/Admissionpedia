@@ -13,7 +13,7 @@ class PagesController extends BaseController{
     }
 
 	public function create(){
-		return View::make('students.create_student');
+		return View::make('students.create_student'); 
 	}
 
  
@@ -48,7 +48,7 @@ class PagesController extends BaseController{
 		$student->board = Input::get('board');
 		$student->year = Input::get('year');
 		$student->group = Input::get('group');
-		$student->type = Input::get('type');
+		$student->type = Input::get('type'); 
 
 			if($student->group == 'Science')
 				return Redirect::route('datapassScience',['reg_no'=>$student->reg_no, 'year'=>$student->year]);

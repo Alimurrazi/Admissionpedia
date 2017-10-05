@@ -60,7 +60,7 @@ th {
     </tr>
     @endfor
     
-</table>
+</table> 
      
 
      <br/>

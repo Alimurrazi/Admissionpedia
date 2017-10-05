@@ -36,8 +36,8 @@
 					<!-- {{ Form::text('blood',null ,array("class"=>"form-control")) }} -->
 					{{ Form::select('year', [
 						'' => 'Select Passed Year',
-						date('Y') => date('Y'),
-						date('Y')-1 => date('Y')-1
+						'2015' => '2015',
+						'2016' => '2016'
 					], null, array('class' => ''))}}
 				</div>
 				

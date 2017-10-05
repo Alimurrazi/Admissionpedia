@@ -13,7 +13,7 @@ class ScienceController extends BaseController
     $this->global=$year;
 		return View::make('students.entryScience')->with('reg_no', $reg_no)
 		->with('year',$year);
-	}
+	} 
       
 
   public function convert($gpa_sub)

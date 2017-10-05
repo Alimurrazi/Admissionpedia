@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@test');
+Route::get('/', 'PagesController@test');   
 
 Route::get('/home', 'PagesController@create');
 Route::post('/home', ['as'=>'student.store', 'uses' => 'PagesController@store']);
