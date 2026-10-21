@@ -1,25 +1,63 @@
-## Laravel PHP Framework
+# Admissionpedia
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Admissionpedia helps HSC students in Bangladesh find out which universities, units and departments they can apply to. Enter your HSC result and group (Science, Commerce or Humanities), and the app shows where you meet the admission requirements and where you don't, with the reason.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+> **Note:** The admission data is based on the **2016 university prospectuses**, so it is only accurate for students who passed HSC in 2015 or 2016.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+## Credits
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+The original project was built by senior students of the SUST CSE '11 batch. I modified it and added some features.
 
-## Official Documentation
+## Features
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+- Check eligibility from your HSC result, for the Science, Commerce and Humanities groups
+- Browse eligible universities, then their units and departments
+- See why you are not eligible for a university, unit or department
+- Admin pages (`/addpedia`) for managing universities, units and departments
 
-### Contributing To Laravel
+## Tech stack
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+- PHP with [Laravel 4.2](https://laravel.com/docs/4.2)
+- MySQL
+- Blade templates and Bootstrap
 
-### License
+## Getting started
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Requirements
+
+- PHP 5.4–5.6 (Laravel 4.2 does not run on PHP 7+)
+- Composer
+- MySQL
+
+### Installation
+
+```bash
+git clone https://github.com/Alimurrazi/Admissionpedia.git
+cd Admissionpedia
+composer install
+```
+
+1. Create a MySQL database named `project1s`, or change the name in `app/config/database.php`.
+2. Set your database username and password in `app/config/database.php`.
+3. Load the university, unit and department data into the database. The data is not included in this repository.
+4. Start the development server:
+
+```bash
+php artisan serve
+```
+
+Then open http://localhost:8000.
+
+## Project structure
+
+| Path | What it holds |
+|---|---|
+| `app/routes.php` | All routes |
+| `app/controllers/` | Eligibility logic per group (`ScienceController`, `CommerceController`, `HumanitiesController`) and admin controllers |
+| `app/models/` | `University`, `Unit`, `Department` and `Student` models |
+| `app/views/` | Blade templates |
+| `public/` | Entry point and assets (Bootstrap, images) |
+
+## License
+
+This project is built on the Laravel framework, which is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
